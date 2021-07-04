@@ -1,0 +1,91 @@
+body {
+    /* 设置页面高度 */
+    /*height: 100%;*/
+    /* 设置背景图片 */
+    background-image: url("../img/background.jpg");
+    /* 设置图片仅显示一次，不重复显示 */
+    background-repeat: no-repeat;
+    background-size: 100%;
+
+}
+
+.container {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.logo {
+    text-align: center;
+    height: 10rem;
+}
+
+.logo img {
+    height: inherit;
+}
+
+.search {
+    text-align: center;
+    height: 2rem;
+    opacity: 70%;
+}
+
+.search input {
+    width: 70%;
+    height: inherit;
+}
+
+.search button {
+    height: inherit;
+}
+
+.common_btn_line {
+    text-align: center;
+    height: 2rem;
+    opacity: 70%;
+    padding-top: 0.5rem;
+}
+
+.common_btn_line button {
+    height: inherit;
+    /* 鼠标悬浮时，变为小手指 */
+    cursor: pointer;
+    padding-left: 1em;
+}
+
+.common_block {
+    text-align: center;
+    height: auto;
+    /*opacity: 70%;*/
+    padding-top: 5rem;
+}
+
+.common_block table {
+    /* 如下3行设置居中 */
+    margin: auto;
+    left: 0;
+    right: 0;
+}
+
+.block {
+    width: 15rem;
+    height: 9rem;
+    background: azure;
+    /* 鼠标悬浮时，变为小手指 */
+    cursor: pointer;
+    opacity: 70%;
+}
+
+.block:hover {
+    opacity: 100%;
+}
+
+.block img {
+    height: 5em;
+}
+
+.block p {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 1rem;
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>StartPage</title>
+    <link rel="stylesheet" href="static/css/style.css">
+    <script src="static/js/index.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+        </div>
+        <div class="search">
+            <label for="search_input"></label><input id="search_input" type="text" placeholder="Searching from Bing">
+            <button id="do-search" type="button" onclick="do_search()">搜索</button>
+        </div>
+        <div id="common_btn_line" class="common_btn_line">
+        </div>
+        <div id="common_block" class="common_block">
+            <table id="block_table">
+            </table>
+        </div>
+    </div>
+    <!-- 执行初始化 -->
+    <script>init()</script>
+</body>
+</html>

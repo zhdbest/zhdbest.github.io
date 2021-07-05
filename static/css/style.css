@@ -50,7 +50,8 @@ body {
     height: inherit;
     /* 鼠标悬浮时，变为小手指 */
     cursor: pointer;
-    padding-left: 1em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
 }
 
 .common_block {

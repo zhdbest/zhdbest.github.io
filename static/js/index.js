@@ -1,11 +1,45 @@
 /**
  * 执行搜索
+ * @param from 该搜索的来源：bing、google_translate、youdao_translate
  */
-function do_search () {
+function do_search (from) {
     let keyword = document.getElementById("search_input").value;
     if (keyword != null && keyword.length > 0) {
-        open_new_page("https://www.bing.com/search?q=" + keyword);
+        open_new_page(get_search_url(from, keyword));
     }
+}
+
+/**
+ * 获取搜索的URL
+ * @param from 该搜索的来源：bing、google_translate、youdao_translate
+ * @param keyword 关键词
+ * @returns {string} 计算出的URL
+ */
+function get_search_url(from, keyword) {
+    if (from == null || keyword == null || keyword.length === 0) {
+        return "";
+    }
+    /* bing */
+    if (from === "bing") {
+        return "https://www.bing.com/search?q=" + keyword;
+    }
+    /* 谷歌翻译 */
+    if (from === "google_translate") {
+        /* 利用正则匹配是否是汉字 */
+        let zh_Array = keyword.match(/[^\x00-\x80]/g);
+        /* 目标语言默认取中文 */
+        let tl = "zh-CN";
+        /* 如果正则匹配出汉字，则目标语言取英文 */
+        if (zh_Array != null) {
+            tl = "en";
+        }
+        return "https://translate.google.cn/?sl=auto&tl=" + tl + "&text=" + keyword + "&op=translate";
+    }
+    /* 有道翻译 */
+    if (from === "youdao_translate") {
+        return "https://www.youdao.com/w/" + keyword + "/#keyfrom=dict2.top";
+    }
+    return "";
 }
 
 /**
@@ -51,7 +85,7 @@ function bind_search_enter() {
                 return false;
             }
             if (event.key !== undefined && event.key === "Enter") {
-                do_search();
+                do_search("bing");
             }
     }, true);
 }

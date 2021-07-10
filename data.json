@@ -5,16 +5,16 @@
       "url": "https://mvnrepository.com"
     },
     {
+      "name": "StackOverflow",
+      "url": "https://stackoverflow.com/questions"
+    },
+    {
       "name": "阿里云开发者社区",
       "url": "https://developer.aliyun.com"
     },
     {
       "name": "美团技术团队",
       "url": "https://tech.meituan.com"
-    },
-    {
-      "name": "StackOverflow",
-      "url": "https://stackoverflow.com/questions"
     },
     {
       "name": "开源中国",

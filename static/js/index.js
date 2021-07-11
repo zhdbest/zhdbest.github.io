@@ -17,8 +17,11 @@ function select_option(ele) {
             btn.classList.remove("selected");
         }
     }
+    let input = document.getElementById("search_input");
+    /* 切换选项卡后，调整输入框提示信息 */
+    input.setAttribute("placeholder", "Search on " + ele.name + "...");
     /* 切换选项卡后，将鼠标聚焦到输入框 */
-    document.getElementById("search_input").focus();
+    input.focus();
 }
 
 /**
@@ -93,6 +96,8 @@ function get_search_url(from, keyword) {
  * 初始化方法
  */
 function init() {
+    /* 设置默认选中的选项卡：必应 */
+    select_option(document.getElementById("bing_btn"));
     /* 绑定搜索框的Enter按键 */
     bind_search_enter();
     let url = "data.json";

@@ -6,7 +6,6 @@ body {
     /* 设置图片仅显示一次，不重复显示 */
     background-repeat: no-repeat;
     background-size: 100%;
-
 }
 
 button {
@@ -35,12 +34,17 @@ button {
 }
 
 .main_input {
-    width: 100%;
+    width: 99%;
     height: 2rem;
     opacity: 70%;
-    padding-left: 0;
+    padding-left: 1%;
     padding-right: 0;
     border: 0;
+}
+
+.main_input:focus {
+    /* 设置输入框聚焦时不需要展示轮廓 */
+    outline: none;
 }
 
 .search_module table {
@@ -86,11 +90,6 @@ button {
 }
 
 .common_btn_line button:hover {
-    height: inherit;
-    padding-left: 0.5em;
-    padding-right: 0.5em;
-    border: azure;
-    border-radius: 2rem;
     opacity: 100%;
 }
 
@@ -136,6 +135,7 @@ button {
     background-color: #4dc86f;
     border: 2px solid #4dc86f;
     color: azure;
+    outline: #4dc86f solid 1px;
 }
 
 .option_btn {
@@ -147,9 +147,6 @@ button {
 
 .option_btn:hover {
     opacity: 100%;
-    background-color: azure;
-    border: 2px solid azure;
-    color: black;
 }
 
 #option {

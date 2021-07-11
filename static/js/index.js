@@ -78,6 +78,14 @@ function get_search_url(from, keyword) {
     if (from === "youdao_translate_btn") {
         return "https://www.youdao.com/w/" + keyword + "/#keyfrom=dict2.top";
     }
+    /* Maven仓库 */
+    if (from === "maven_btn") {
+        return "https://mvnrepository.com/search?q=" + keyword;
+    }
+    /* stackoverflow */
+    if (from === "stackoverflow_btn") {
+        return "https://stackoverflow.com/search?q=" + keyword;
+    }
     return "";
 }
 

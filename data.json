@@ -1,14 +1,6 @@
 {
   "commonLine": [
     {
-      "name": "Maven Repository",
-      "url": "https://mvnrepository.com"
-    },
-    {
-      "name": "StackOverflow",
-      "url": "https://stackoverflow.com/questions"
-    },
-    {
       "name": "阿里云开发者社区",
       "url": "https://developer.aliyun.com"
     },

@@ -1,11 +1,50 @@
 /**
- * 执行搜索
- * @param from 该搜索的来源：bing、google_translate、youdao_translate
+ * 选择选项卡
+ * @param ele 当前点击的button
+ * @returns {boolean}
  */
-function do_search (from) {
+function select_option(ele) {
+    let btn_array = document.getElementById("option").getElementsByTagName("button");
+    if (btn_array == null || btn_array.length === 0) {
+        return false;
+    }
+    ele.classList.add("selected");
+    ele.classList.remove("option_btn");
+    for (let i = 0; i < btn_array.length; i++) {
+        let btn = btn_array[i];
+        if (ele !== btn) {
+            btn.classList.add("option_btn");
+            btn.classList.remove("selected");
+        }
+    }
+    /* 切换选项卡后，将鼠标聚焦到输入框 */
+    document.getElementById("search_input").focus();
+}
+
+/**
+ * 执行查询
+ * @returns {boolean}
+ */
+function go() {
     let keyword = document.getElementById("search_input").value;
-    if (keyword != null && keyword.length > 0) {
-        open_new_page(get_search_url(from, keyword));
+    if (keyword == null || keyword.length === 0) {
+        return false;
+    }
+    let btn_array = document.getElementById("option").getElementsByTagName("button");
+    if (btn_array == null || btn_array.length === 0) {
+        return false;
+    }
+
+    let url = "";
+    for (let i = 0; i < btn_array.length; i++) {
+        let btn = btn_array[i];
+        let btn_class = btn.className;
+        if (btn_class !== "" && btn_class.indexOf("selected") !== -1) {
+            url = get_search_url(btn.id, keyword)
+        }
+    }
+    if (url != null && url !== "") {
+        open_new_page(url);
     }
 }
 
@@ -20,11 +59,11 @@ function get_search_url(from, keyword) {
         return "";
     }
     /* bing */
-    if (from === "bing") {
+    if (from === "bing_btn") {
         return "https://www.bing.com/search?q=" + keyword;
     }
     /* 谷歌翻译 */
-    if (from === "google_translate") {
+    if (from === "google_translate_btn") {
         /* 利用正则匹配是否是汉字 */
         let zh_Array = keyword.match(/[^\x00-\x80]/g);
         /* 目标语言默认取中文 */
@@ -36,7 +75,7 @@ function get_search_url(from, keyword) {
         return "https://translate.google.cn/?sl=auto&tl=" + tl + "&text=" + keyword + "&op=translate";
     }
     /* 有道翻译 */
-    if (from === "youdao_translate") {
+    if (from === "youdao_translate_btn") {
         return "https://www.youdao.com/w/" + keyword + "/#keyfrom=dict2.top";
     }
     return "";
@@ -85,7 +124,7 @@ function bind_search_enter() {
                 return false;
             }
             if (event.key !== undefined && event.key === "Enter") {
-                do_search("bing");
+                go();
             }
     }, true);
 }

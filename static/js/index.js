@@ -1,4 +1,12 @@
 /**
+ * 变量
+ */
+const variate = {
+    /* 当前是否正在输入，输入中时不触发回车查询 */
+    type_in_now: false
+};
+
+/**
  * 选择选项卡
  * @param ele 当前点击的button
  * @returns {boolean}
@@ -99,7 +107,7 @@ function init() {
     /* 设置默认选中的选项卡：必应 */
     select_option(document.getElementById("bing_btn"));
     /* 绑定搜索框的Enter按键 */
-    bind_search_enter();
+    bind_search_input();
     let url = "data.json";
     let request = new XMLHttpRequest();
     /* 设置请求方法与路径 */
@@ -130,16 +138,27 @@ function init() {
 /**
  * 绑定搜索框的Enter按键搜索
  */
-function bind_search_enter() {
+function bind_search_input() {
+    /* 绑定Enter键触发查询 */
     document.getElementById("search_input")
         .addEventListener("keydown", function (event) {
-            if (event === undefined) {
+            if (event === undefined || variate.type_in_now) {
                 return false;
             }
             if (event.key !== undefined && event.key === "Enter") {
                 go();
             }
-    }, true);
+        });
+    /* 绑定"待确认文本"开始输入事件 */
+    document.getElementById("search_input")
+        .addEventListener("compositionstart", function () {
+            variate.type_in_now = true;
+        });
+    /* 绑定"待确认文本"结束输入事件 */
+    document.getElementById("search_input")
+        .addEventListener("compositionend", function () {
+            variate.type_in_now = false;
+        });
 }
 
 /**

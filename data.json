@@ -15,6 +15,18 @@
     {
       "name": "Linux中国",
       "url": "https://linux.cn"
+    },
+    {
+      "name": "个人博客",
+      "url": "https://hongmao.run/blog/"
+    },
+    {
+      "name": "JDK8源码阅读笔记",
+      "url": "https://hongmao.run/jdk8-src-note/"
+    },
+    {
+      "name": "Spring文档翻译",
+      "url": "https://hongmao.run/spring-doc/"
     }
   ],
   "blockConfig": {

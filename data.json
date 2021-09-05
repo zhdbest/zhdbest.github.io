@@ -27,6 +27,10 @@
     {
       "name": "Spring文档翻译",
       "url": "https://hongmao.run/spring-doc/"
+    },
+    {
+      "name": "命令库",
+      "url": "https://hongmao.run/cmd/"
     }
   ],
   "blockConfig": {
@@ -73,5 +77,57 @@
         "svg": "static/icon/gitee-fill-round.svg"
       }
     ]
-  }
+  },
+  "favorites": [
+    {
+      "name": "Homebrew",
+      "url": "https://brew.sh/",
+      "icon": "static/icon/homebrew.svg"
+    },
+    {
+      "name": "CodePen",
+      "url": "https://codepen.io/",
+      "icon": "static/icon/codepen.svg"
+    },
+    {
+      "name": "开源中国常用对照表",
+      "url": "https://tool.oschina.net/commons",
+      "icon": "static/icon/oschina.jpg"
+    },
+    {
+      "name": "颜色转换",
+      "url": "https://sunpma.com/other/rgb/",
+      "icon": "static/icon/rgb.svg"
+    },
+    {
+      "name": "图片压缩",
+      "url": "https://tinypng.com/",
+      "icon": "static/icon/panda.svg"
+    },
+    {
+      "name": "IcoMoon",
+      "url": "https://icomoon.io/app/#/select",
+      "icon": "static/icon/IcoMoon.svg"
+    },
+    {
+      "name": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/Main_Page",
+      "icon": "static/icon/wikimediacommons.svg"
+    },
+    {
+      "name": "Font Awesome",
+      "url": "https://fontawesome.com/",
+      "icon": "static/icon/font-awesome-alt-brands.svg"
+    },
+    {
+      "name": "ShareIcon",
+      "url": "https://www.shareicon.net/",
+      "icon": "static/icon/share.svg"
+    },
+    {
+      "name": "SVG Repo",
+      "url": "https://www.svgrepo.com/",
+      "icon": "static/icon/icon-repo.png"
+    }
+  ]
 }

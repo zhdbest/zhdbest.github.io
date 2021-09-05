@@ -20,11 +20,59 @@ button {
 
 .logo {
     text-align: center;
-    height: 8rem;
+    height: 6rem;
 }
 
 .logo img {
     height: inherit;
+}
+
+.favorites {
+    text-align: right;
+    float: right;
+    height: 2rem;
+}
+
+.favorites img {
+    height: inherit;
+}
+
+.favorites_contents {
+    display: none;
+    position: relative;
+    /*background-color: azure;*/
+    min-width: 180px;
+    /*box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);*/
+    z-index: 1;
+    text-align: left;
+}
+
+.favorites_contents a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    background-color: azure;
+    opacity: 90%;
+}
+
+.favorites:hover .favorites_contents {
+    display: block;
+}
+
+.favorites:hover #favorites_icon {
+    opacity: 50%;
+}
+
+.favorites_contents a:hover {
+    opacity: 100%;
+}
+
+.favorites_contents a img {
+    width: 1.5rem;
+    height: 1.5rem;
+    vertical-align: middle;
+    padding: 0 6px;
 }
 
 .search_module {

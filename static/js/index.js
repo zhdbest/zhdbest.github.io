@@ -131,6 +131,11 @@ function init() {
             if (blockList != null && blockList.length > 0) {
                 init_block(blockConfig);
             }
+            /* 处理收藏夹 */
+            let favorites = json.favorites;
+            if (favorites != null && favorites.length > 0) {
+                init_favorites(favorites);
+            }
         }
     }
 }
@@ -212,4 +217,19 @@ function init_block(block_config) {
     document.getElementById("block_table").innerHTML = all_block_html;
 }
 
-
+/**
+ * 初始化收藏夹
+ * @param favorites_config 收藏夹配置
+ */
+function init_favorites(favorites_config) {
+    let all_html = "";
+    favorites_config.forEach(function (item) {
+        let icon = item.icon;
+        /* 如果用户未设置图标，则使用默认图表 */
+        if (icon == null || icon === "") {
+            icon = "static/icon/browser-website.svg";
+        }
+        all_html = all_html + "<a target=\"_blank\" href=\"" + item.url +"\"" + "><img alt=\"\" src=\"" + icon + "\">" + item.name + "</a>";
+        document.getElementById("favorites").innerHTML = all_html;
+    });
+}
